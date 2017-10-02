@@ -1,11 +1,51 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
-  </body>
+    <head>
+        <meta charset="utf-8">
+        <title><%= title %></title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css"
+              integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M"
+              crossorigin="anonymous">
+    </head>
+    <body>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js"
+                integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1"
+                crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+                integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+                crossorigin="anonymous"></script>
+        <div class="container">
+            <h1><%= title %></h1>
+            <div class="jumbotron">
+                <h3><%= title %></h3>
+                <form id="issueInputForm" method="post" action="/">
+                    <div class="form-group">
+                        <label for="issueDescInput">Description</label>
+                        <input type="text" class="form-control" id="issueDescInput" placeholder="Issue...??">
+                    </div>
+                    <div class="form-group">
+                        <label for="issueSeverityInput">Severity</label>
+                        <select id="issueSeverityInput" class="form-control">
+                            <option value="Low">Low</option>
+                            <option value="Medium">Medium</option>
+                            <option value="High">High</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="issueAssignedToInput">Assigned To</label>
+                        <input type="text" class="form-control" id="issueAssignedToInput"
+                               placeholder="Assigned To...??">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Add</button>
+                </form>
+            </div>
+            <div class="col-lg-12">
+                <div id="issuesList">
+                </div>
+            </div>
+            <div class="footer">
+                <p>&copy <%= author %></p>
+            </div>
+        </div>
+    </body>
 </html>
